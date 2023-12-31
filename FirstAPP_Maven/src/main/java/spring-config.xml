@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   
+     <bean id="book1" class="com.tcs.Book" c:bid="111" c:bname="green" c:author="james"/>
+   <bean id="book2" class="com.tcs.Book" c:bid="112" c:bname="black" c:author="kane"/>
+   <bean id="book3" class="com.tcs.Book" c:bid="113" c:bname="red" c:author="will"/>
+   
+   <bean id="collection" class="com.tcs.CollectionsData">
+   <constructor-arg index="0" >
+   <list>
+   <value>sk</value>
+    <value>shaik</value>
+    <value>sheik</value>
+   </list>
+  
+   </constructor-arg>
+   <constructor-arg>
+    <set>
+   <value>788</value>
+    <value>8978</value>
+    <value>789</value>
+   </set></constructor-arg>
+  <constructor-arg>
+  <map>
+  <entry key="sk" value="5"/>
+  <entry key="shaik" value="15"/>
+  <entry key="sheik" value="8"/>
+  </map>
+  </constructor-arg> 
+   <constructor-arg>
+   <props>
+   <prop key="username">system</prop>
+   <prop key="passwor">pass</prop>
+   </props>
+   </constructor-arg>
+  <constructor-arg>
+  <list>
+  <ref bean="book1"/>
+   <ref bean="book2"/>
+    <ref bean="book3"/>
+  </list>
+  </constructor-arg>
+   </bean>
+</beans>
